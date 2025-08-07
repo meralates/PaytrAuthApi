@@ -8,6 +8,9 @@ C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\PaytrAuthApi.dll
 C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\PaytrAuthApi.pdb
 C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MONSTER\Desktop\PaytrAuthApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.csproj.AssemblyReference.cache
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\rpswa.dswa.cache.json
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.GeneratedMSBuildEditorConfig.editorconfig
@@ -16,6 +19,7 @@ C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.AssemblyInfo
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.csproj.CoreCompileInputs.cache
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\PaytrAuthApi.sourcelink.json
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\MONSTER\Desktop\PaytrAuthApi\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
