@@ -15,14 +15,34 @@ namespace PaytrAuthApi.Controllers
         public TokenController(AuthService authService, Microsoft.Extensions.Options.IOptions<PaytrSettings> paytrSettings)
         {
             _authService = authService;
-            _paytrSettings = paytrSettings.Value; 
+            _paytrSettings = paytrSettings.Value;
         }
+
         [HttpPost("get-token")]
         public async Task<IActionResult> GetToken([FromBody] GetTokenRequest request)
         {
-           
+            if (!Request.Headers.ContainsKey("Authorization"))
+            {
+                return Unauthorized(new GetTokenResponse
+                {
+                    DeviceId = request.DeviceId,
+                    AccessToken = null,
+                    Error = "Authorization header eksik"
+                });
+            }
 
-            // Device ID kontrolü
+            var authHeader = Request.Headers["Authorization"].ToString();
+            if (!_authService.ValidateBasicAuth(authHeader))
+            {
+                return Unauthorized(new GetTokenResponse
+                {
+                    DeviceId = request.DeviceId,
+                    AccessToken = null,
+                    Error = "Geçersiz kullanıcı adı veya şifre"
+                });
+            }
+
+            
             if (request.DeviceId != "5")
             {
                 return BadRequest(new GetTokenResponse
@@ -32,11 +52,12 @@ namespace PaytrAuthApi.Controllers
                     Error = "Cihaz bulunamadı"
                 });
             }
+            
             var merchantId = _paytrSettings.MerchantId;
             var publicKey = _paytrSettings.PublicKey;
             var privateKey = _paytrSettings.PrivateKey;
             var merchantSalt = _paytrSettings.MerchantSalt;
-            var merchantKey = _paytrSettings.MerchantKey; 
+            var merchantKey = _paytrSettings.MerchantKey;
 
             if (string.IsNullOrWhiteSpace(merchantId) ||
                 string.IsNullOrWhiteSpace(publicKey) ||
@@ -50,12 +71,14 @@ namespace PaytrAuthApi.Controllers
                     Error = "Sunucu yapılandırması eksik"
                 });
             }
-            // Token oluştur
+
+        
             var paytrToken = Utils.CryptoHelper.GeneratePaytrToken(
                 merchantId, publicKey, privateKey, merchantSalt, merchantKey
             );
+
             Console.WriteLine("Oluşturulan PAYTR Token: " + paytrToken);
-            // PayTR isteği
+            
             var response = await _authService.LoginAsync(merchantId, publicKey, paytrToken);
             if (response.Result == "success")
             {
@@ -76,6 +99,5 @@ namespace PaytrAuthApi.Controllers
                 });
             }
         }
-
     }
 }
