@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaytrAuthApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+befad2b84c2a2adfe71478740bd1ccc1a765b3f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a22ceb4837888f09676332d51000431e3d1b913e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaytrAuthApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaytrAuthApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
