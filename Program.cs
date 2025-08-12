@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using PaytrAuthApi.Models;
 using PaytrAuthApi.Services;
 using PaytrAuthApi.Settings;
@@ -20,6 +21,10 @@ builder.Services.AddTransient<PaymentService>();
 
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddHttpClient<AuthService>();
+
+//validator
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<PaymentRequestModelValidator>());
 
 
 builder.Services.AddSingleton<TokenManager>();

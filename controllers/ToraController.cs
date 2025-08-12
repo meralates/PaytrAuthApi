@@ -8,13 +8,13 @@ namespace PaytrAuthApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PaytrController : ControllerBase
+    public class ToraController : ControllerBase
     {
         private readonly AuthService _authService;
         private readonly PaymentService _paymentService;
         private readonly PaytrSettings _paytrSettings;
 
-        public PaytrController(
+        public ToraController(
             AuthService authService,
             PaymentService paymentService,
             IOptions<PaytrSettings> paytrSettings)
